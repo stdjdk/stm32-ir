@@ -74,10 +74,10 @@ void IR_Init(void)
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
     NVIC_InitStructure.NVIC_IRQChannelSubPriority        = 0;
     NVIC_Init(&NVIC_InitStructure);
-
+//8位二进制定时器
     /* TIM3：72MHz/72 = 1MHz → 每格 1µs */
-    TIM_TimeBaseStructure.TIM_Prescaler     = 72 - 1;
-    TIM_TimeBaseStructure.TIM_Period        = 0xFFFF;
+    TIM_TimeBaseStructure.TIM_Prescaler     = 72 - 1;//0开始决定每次加1过多少秒1/（72Mhz/72）s
+    TIM_TimeBaseStructure.TIM_Period        = 0xFFFF;//加到多少封顶8位二进制
     TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1;
     TIM_TimeBaseStructure.TIM_CounterMode   = TIM_CounterMode_Up;
     TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);
