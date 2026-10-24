@@ -1,0 +1,16 @@
+Objects/
+Listings/
+DebugConfig/
+*.uvguix.*
+*.bak
+*.dep
+*.crf
+*.o
+*.d
+*.lst
+*.map
+*.sct
+*.axf
+*.lnp
+Thumbs.db
+desktop.ini
